@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <script  src="loginscr.js"></script>
+    <link rel="stylesheet" href="loginstyle.css">
+    
+</head>
+    
+<body>
+
+<div id="back">
+  <div class="backRight"></div>
+  <div class="backLeft"></div>
+</div>
+
+<div id="slideBox">
+  <div class="topLayer">
+    <div class="left">
+      <div class="content">
+        <h2>RECRUITER</h2>
+        <form method="post" action="track_recruiter.php">
+          <div class="form-group">
+            <input type="text" placeholder="Email" name="email" />
+            <input type="text" placeholder="Ticket Number" name="tcn" />
+          </div>
+       
+        <button type="button" id="goLeft" class="off">APPLICANT</button>
+        <input type="submit" value="Track"></input>
+      </form>
+      </div>
+    </div>
+    <div class="right">
+      <div class="content">
+        <h2>APPLICANT</h2>
+        <form method="post" action="Track_applicant.php">
+          <div class="form-group">
+            <input type="email" placeholder="Email" name="email" />
+          </div>
+          <button type="button" id="goRight" class="off">RECRUITER</button>
+          <input id="applicant" type="submit" value="Track"></input>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+</body>
+
+</html>

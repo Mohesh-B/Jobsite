@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <title>
+      Post a job
+    </title>
+    <link rel="stylesheet" href="post.css">
+  </head>
+<body>
+<div class="container">
+    <div class="container-close" ><span onclick="fun()">&times;</span></div>
+    <img
+      src="bgpost.jpg"alt="image">
+      
+    <div class="container-text">
+      <h3>Post a Job</h3>
+      <form onsubmit="return validations()" action="Savepost.php" method="POST">
+      <input type="text" placeholder="Company-Title(Block Letters)" name="company" id="cn" required>
+      <input type="text" placeholder="Job-Title" name="job" required>
+      <input type="type" placeholder="Email address" id="email" name="email" required>
+      <select placeholder="Job-Type" name="typ">
+        <option >Full-Time</option>
+        <option >Part-Time</option>
+        <option >FreeLance</option>
+      </select>
+      <input type="salary" name="sal" id='sal' placeholder="Enter salary in USD/annum or USD/project for FreeLance" required>
+      <textarea placeholder="Job Description" name="des"></textarea>
+      <span>I agree to the condition of Joblance's recruiter documents.</span><input type="radio" required>
+      <button type="submit">Post</button>
+      <p>Track responses via Track session in homepage. Thankyou</p>
+      </form>
+    </div>
+  </div>
+  <script>
+    function validations()
+    {
+        var chck=0;
+        var email=document.getElementById("email").value;
+        var emailpat=/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$/;
+        var salary=document.getElementById('sal').value;
+        var salarypat=/^[0-9.]*$/;
+        var cn=document.getElementById("cn").value;
+        var cnpat=/^[A-Z0-9@-_]*$/;
+        if(!emailpat.test(email))
+        {
+          alert("Enter valid email id::example@domain.com");
+          chck=1
+        }
+        if(!salarypat.test(salary))
+        {
+          alert("Enter valid salary");
+          chck=1
+        }
+        if(!cnpat.test(cn))
+        {
+          alert("Enter Company Title In BLOCK letters and no special characters other than @-_ is allowed");
+          chck=1
+        }
+        if(chck!=0)
+        {
+          return false;
+        }
+        else{
+          return true;
+        }
+    }
+    function fun()
+    {
+      location.href="mainpage.php";
+    }
+  </script>
+  </body>
+</html>

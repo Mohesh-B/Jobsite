@@ -1,0 +1,14 @@
+ function email_con()
+        {
+            Email.send({
+            Host : "smtp.gmail.com",
+            Username : "mohesh.baskar@gmail.com",
+            Password : "Mohesh@151223",
+            To :'mohesh.baskar@gmail.com',
+            From : document.getElementById('email').value,
+            Subject : "Complaint",
+            Body : "Name: "+document.getElementById('name').value
+            +"<br> Email: "+document.getElementById('email').value
+            +"<br> Message: "+document.getElementById('msg').value,
+            }).then(
+            message => 
